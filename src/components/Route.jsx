@@ -1,16 +1,8 @@
-import React from "react";
-import { Routes, Redirect } from "react-router-dom";
+import React from 'react';
+import { Redirect, Switch, Route } from 'react-router-dom';
 
-const Route = () => {
-  return (
-    <div className="p-4">
-      <Routes>
-        <Route exact path="/">
-          <Redirect to="/search" />
-        </Route>
-      </Routes>
-    </div>
-  );
+const Router = () => {
+  return <div className='p-4'></div>;
 };
 
-export default Route;
+export default Router;
