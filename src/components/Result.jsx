@@ -12,7 +12,14 @@ const Result = () => {
 
   if (isLoading) return <Loading />;
 
-  return <div>Result</div>;
+  switch (key) {
+    case value:
+      
+      break;
+  
+    default:
+      break;
+  }
 };
 
 export default Result;
