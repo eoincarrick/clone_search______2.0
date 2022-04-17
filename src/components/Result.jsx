@@ -12,9 +12,9 @@ const Result = () => {
   console.log(result);
   const location = useLocation();
 
-  useEffect(() => {
-    getResult('/search/q=Rock&num=40');
-  }, []);
+  // useEffect(() => {
+  //   getResult('/search/q=Rock&num=40');
+  // }, []);
 
   if (isLoading) return <Loading />;
 

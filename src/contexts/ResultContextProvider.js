@@ -12,12 +12,12 @@ export const ResultContextProvider = ({ children }) => {
     setIsLoading(!isLoading);
 
     try {
-      const response = await fetch(`${baseUrl}${type}`, {
+      const response = await fetch(baseUrl, {
         method: 'GET',
         headers: {
           'X-RapidAPI-Host': 'google-search1.p.rapidapi.com',
           'X-RapidAPI-Key':
-            'cb9d4a1f5amshbb440aaee46c257p1dfa9bjsnefe6f50bb9f8',
+            'f01687c65emsheaaef840bfca25dp1de079jsn9678bec10359',
         },
       });
 
@@ -26,8 +26,7 @@ export const ResultContextProvider = ({ children }) => {
       setResult(data);
       setIsLoading(isLoading);
     } catch (error) {
-      console.log(`Error Message`);
-      console.log(error);
+      console.error(error);
     }
   };
 
