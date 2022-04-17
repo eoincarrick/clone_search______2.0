@@ -65,10 +65,21 @@ const Result = () => {
               <p className='text-lg hover:underline dark:text-blue-300 text-blue-700'>
                 {title}
               </p>
-              <a href={links?.[0].href} target='_blank' title={link} rel='noreferrer' className='hover'>
-                <p className='text-sm'>
-                  {link.length > 30 ? link.substring(0, 30) : link}
+              <a
+                href={links?.[0].href}
+                target='_blank'
+                title={title}
+                rel='noreferrer'
+                className='hover:underline'
+              >
+                <p className='text-lg dark:text-blue-300 text-blue 700'>
+                  {title}
                 </p>
+                <div className='flex gap-4'>
+                  <a href={source?.href} target='_blank' rel='noreferrer'>
+                    {source?.href}
+                  </a>
+                </div>
               </a>
             </div>
           ))}
