@@ -11,23 +11,27 @@ export const ResultContextProvider = ({ children }) => {
   const getResult = async (type) => {
     setIsLoading(!isLoading);
 
-    try {
-      const response = await fetch(baseUrl, {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Host': 'google-search1.p.rapidapi.com',
-          'X-RapidAPI-Key':
-            'f01687c65emsheaaef840bfca25dp1de079jsn9678bec10359',
-        },
-      });
+    const response = await fetch(baseUrl, {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Host': 'google-search1.p.rapidapi.com',
+        'X-RapidAPI-Key': 'f01687c65emsheaaef840bfca25dp1de079jsn9678bec10359',
+      },
+    });
 
-      const data = await response.json();
+    const data = await response.json();
 
-      setResult(data);
-      setIsLoading(isLoading);
-    } catch (error) {
-      console.error(error);
+    console.log({ type, data });
+    if (type.includes('/news')) {
+      setResult(data.entries);
+    } else if (type.includes('images')) {
+      setResult(data.image_results);
+    } else {
+      setResult(data.results);
     }
+
+    setResult(data);
+    setIsLoading(isLoading);
   };
 
   return (

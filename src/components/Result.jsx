@@ -28,7 +28,7 @@ const Result = () => {
     case '/search':
       return (
         <div className='flex flex-wrap justify-between space-y-6 sm:px-56'>
-          {result?.result?.map(({ link, title, description }, index) => (
+          {result?.map(({ link, title, description }, index) => (
             <div key={index} title={description} className='md:w-2/5 w-full '>
               <p className='text-lg hover:underline dark:text-blue-300 text-blue-700'>
                 {title}
@@ -45,7 +45,7 @@ const Result = () => {
     case '/images':
       return (
         <div className='flex flex-wrap justify-center items-center'>
-          {result?.image_result?.map(
+          {result?.map(
             ({ image, link: { href, title } }, index) => {
               return (
                 <a href={href} key={index} className='sm:p-3 p-5'>
@@ -60,7 +60,7 @@ const Result = () => {
     case '/news':
       return (
         <div className='flex flex-wrap justify-between space-y-6 sm:px-56 items-center'>
-          {result?.entries?.map(({ links, id, title, source }) => (
+          {result?.map(({ links, id, title, source }) => (
             <div key={id} title={description} className='md:w-2/5 w-full '>
               <p className='text-lg hover:underline dark:text-blue-300 text-blue-700'>
                 {title}
@@ -86,7 +86,7 @@ const Result = () => {
         </div>
       );
     case '/videos':
-      return 'SEARCH';
+      return <div className='flex flex-wrap'>{}</div>;
 
     default:
       return 'ERROR!';
